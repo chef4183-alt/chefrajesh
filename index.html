@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef Rajesh Abraham — The Art of Culinary</title>
+  <meta name="description" content="Executive Chef with 20+ years of culinary experience across the Middle East & India. Explore signature recipes, culinary philosophy, and professional services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ════════════════════════════════
+       INDEX PAGE — SPECIFIC STYLES
+       ════════════════════════════════ */
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative; overflow: hidden;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: clamp(6rem,12vw,9rem) clamp(2rem,4vw,4rem) clamp(3rem,6vw,6rem) clamp(1.25rem,3vw,2rem);
+    }
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+      font-weight: 300; line-height: 1.05;
+      letter-spacing: -0.02em; margin-bottom: 1.25rem;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-subtitle {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--smoke); margin-bottom: 1.5rem;
+    }
+    .hero-quote {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      font-style: italic; color: var(--smoke);
+      border-left: 2px solid var(--gold);
+      padding-left: 1.25rem; margin-bottom: 2.5rem; line-height: 1.7;
+    }
+    .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .hero-right {
+      position: relative; overflow: hidden; background: var(--cream);
+      min-height: 400px;
+    }
+    .hero-img-wrap { position: absolute; inset: 0; }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-img-placeholder { width: 100%; height: 100%; min-height: 100%; }
+
+    .hero-badge {
+      position: absolute; bottom: 2.5rem; left: 0; z-index: 2;
+      background: var(--charcoal); color: var(--cream);
+      padding: 1.25rem 1.75rem;
+      font-family: var(--ff-display);
+    }
+    .hero-badge strong { display: block; font-size: 2.2rem; color: var(--gold); line-height: 1; }
+    .hero-badge span   { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; }
+
+    .hero-scroll {
+      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      color: var(--smoke); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+      animation: scrollBob 2s ease-in-out infinite;
+      white-space: nowrap;
+    }
+    .hero-scroll::after { content: ''; width: 1px; height: 36px; background: var(--gold); }
+    @keyframes scrollBob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy { background: var(--cream); padding: var(--section-py) 0; }
+    .philosophy-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 6rem); align-items: center;
+    }
+    .philosophy-img {
+      position: relative;
+      height: clamp(320px, 50vw, 540px);
+    }
+    .philosophy-img img { width: 100%; height: 100%; object-fit: cover; }
+    .philosophy-img-placeholder { width: 100%; height: 100%; }
+    .philosophy-img::after {
+      content: ''; position: absolute; bottom: -1.25rem; right: -1.25rem;
+      width: 55%; height: 55%; border: 1px solid var(--gold); z-index: -1;
+    }
+    .philosophy-text blockquote {
+      font-family: var(--ff-display);
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-style: italic; font-weight: 300;
+      border-left: 3px solid var(--gold); padding-left: 1.5rem;
+      margin-bottom: 1.75rem; line-height: 1.65; color: var(--charcoal);
+    }
+    .philosophy-text p { margin-bottom: 1rem; color: var(--smoke); line-height: 1.8; }
+    .philosophy-text p strong { color: var(--charcoal); font-weight: 500; }
+
+    /* ── GOLDEN RULES ── */
+    .rules { padding: var(--section-py) 0; }
+    .rules-header { text-align: center; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--line);
+    }
+    .rule-item {
+      background: var(--warm-white);
+      padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1rem, 2vw, 1.5rem);
+      text-align: center; position: relative;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+    }
+    .rule-item:nth-child(5n) { border-right: none; }
+    .rule-item:nth-last-child(-n+5) { border-bottom: none; }
+    .rule-item::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--gold); opacity: 0; transition: opacity 0.3s;
+    }
+    .rule-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); z-index: 1; }
+    .rule-item:hover::before { opacity: 0.04; }
+    .rule-num {
+      display: block; font-family: var(--ff-display);
+      font-size: clamp(2rem, 3.5vw, 3rem); color: var(--gold);
+      opacity: 0.28; line-height: 1;
+    }
+    .rule-icon { font-size: 1.2rem; margin: 0.4rem 0 0.3rem; }
+    .rule-item h4 {
+      font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+      margin-bottom: 0.4rem; font-weight: 500; position: relative; z-index: 1;
+    }
+    .rule-item p { font-size: 0.8rem; color: var(--smoke); line-height: 1.55; position: relative; z-index: 1; }
+
+    /* ── FEATURED ── */
+    .featured { background: var(--charcoal); padding: var(--section-py) 0; }
+    .featured-header { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+    .featured-header .eyebrow { color: var(--gold-light); }
+    .featured-header h2 { color: var(--cream); }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+    .featured-card {
+      position: relative; overflow: hidden; display: block;
+    }
+    .featured-card:first-child { grid-row: span 2; }
+    .featured-card-img {
+      width: 100%; position: relative;
+      padding-top: 66.66%; overflow: hidden;
+    }
+    .featured-card:first-child .featured-card-img {
+      padding-top: 0; height: 100%; min-height: 380px;
+      position: absolute; inset: 0; padding: 0;
+    }
+    .featured-card:first-child { position: relative; min-height: 420px; }
+    .featured-card-img img,
+    .featured-card-img .img-placeholder {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .featured-card-img img { transition: transform 0.65s var(--ease-out); }
+    .featured-card:hover .featured-card-img img { transform: scale(1.06); }
+    .featured-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(28,28,26,0.88) 0%, rgba(28,28,26,0.1) 55%, transparent 100%);
+      pointer-events: none;
+    }
+    .featured-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: clamp(1rem, 2vw, 1.75rem);
+    }
+    .featured-info h3 {
+      font-family: var(--ff-display); color: var(--cream); font-weight: 400;
+      font-size: clamp(0.95rem, 1.5vw, 1.2rem); line-height: 1.3;
+    }
+    .featured-card:first-child .featured-info h3 { font-size: clamp(1.2rem, 2.5vw, 1.7rem); }
+    .featured-cta { text-align: center; margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+
+    /* ── HIRE CTA ── */
+    .hire { background: var(--cream); padding: var(--section-py) 0; }
+    .hire-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 5rem); align-items: center;
+    }
+    .hire-text h2 { margin-bottom: 1rem; }
+    .hire-text p { color: var(--smoke); margin-bottom: 2rem; max-width: 480px; }
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--line);
+    }
+    .stat-item {
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      text-align: center; border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--warm-white);
+    }
+    .stat-item:nth-child(2n) { border-right: none; }
+    .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+    .stat-num {
+      font-family: var(--ff-display); font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--gold); display: block; line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--smoke); display: block; margin-top: 0.4rem;
+    }
+
+    /* ═══════════════════════════
+       RESPONSIVE BREAKPOINTS
+       ═══════════════════════════ */
+
+    /* Tablet landscape / small desktop */
+    @media (max-width: 1024px) {
+      .rules-grid { grid-template-columns: repeat(5, 1fr); }
+      .featured-grid { grid-template-columns: 1fr 1fr; }
+      .featured-card:first-child { grid-row: auto; grid-column: 1 / -1; min-height: 320px; }
+      .featured-card:first-child .featured-card-img { position: relative; height: 100%; }
+    }
+
+    /* Tablet portrait */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: clamp(7rem,15vw,9rem) 1.5rem clamp(2.5rem,5vw,4rem); max-width: 100%; }
+      .hero-right { height: 56vw; min-height: 300px; }
+      .hero-badge { left: 1.25rem; }
+      .hero-scroll { display: none; }
+
+      .philosophy-inner { grid-template-columns: 1fr; }
+      .philosophy-img { height: clamp(260px, 55vw, 400px); }
+      .philosophy-img::after { display: none; }
+
+      .rules-grid { grid-template-columns: repeat(2, 1fr); }
+      .rule-item:nth-child(5n) { border-right: 1px solid var(--line); }
+      .rule-item:nth-child(2n) { border-right: none; }
+      .rule-item:nth-last-child(-n+5) { border-bottom: 1px solid var(--line); }
+      .rule-item:nth-last-child(-n+2) { border-bottom: none; }
+
+      .featured-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+      .featured-card:first-child { grid-column: 1 / -1; }
+
+      .hire-inner { grid-template-columns: 1fr; }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .hero-right { height: 72vw; }
+      .hero-quote { font-size: 1rem; }
+
+      .rules-grid { grid-template-columns: 1fr 1fr; }
+      .rule-item { padding: 1.25rem 0.75rem; }
+      .rule-item p { display: none; }
+
+      .featured-grid { grid-template-columns: 1fr; }
+      .featured-card:first-child { min-height: 260px; }
+
+      .hire-text p { max-width: 100%; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { text-align: center; justify-content: center; }
+      .rules-grid { grid-template-columns: 1fr; }
+      .rule-item:nth-child(2n) { border-right: 1px solid var(--line); }
+      .rule-item { border-right: none !important; }
+      .rule-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .rule-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">Chef <span>Rajesh</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile overlay -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-left">
+    <span class="eyebrow fade-in">Executive Chef · 20+ Years of Excellence</span>
+    <h1 class="hero-title fade-in">The Art of<br><em>Culinary</em></h1>
+    <p class="hero-subtitle fade-in">Middle East &amp; India · Culinary Leadership</p>
+    <blockquote class="hero-quote fade-in">
+      "The true art of cooking lies in the harmony of ingredients, timing, temperature, and technique."
+    </blockquote>
+    <div class="hero-ctas fade-in">
+      <a href="recipes.html" class="btn btn-primary btn-arrow">My Recipes</a>
+      <a href="about.html" class="btn btn-outline">Hire Chef Rajesh</a>
+    </div>
+  </div>
+
+  <div class="hero-right" aria-hidden="true">
+    <div class="hero-img-wrap">
+      <!-- ★ ADD IMAGE: Replace the placeholder below with:
+           <img src="images/chef-hero.webp" alt="Chef Rajesh Abraham" loading="eager">
+           Recommended size: 800×1000px portrait -->
+      <div class="hero-img-placeholder img-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8">
+          <circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0116 0v2"/>
+        </svg>
+        <span>Chef Portrait Photo</span>
+        <span class="ph-note">800×1000px · portrait orientation</span>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <strong>20+</strong>
+      <span>Years of Experience</span>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">Scroll</div>
+</section>
+
+<!-- ═══ PHILOSOPHY ═══ -->
+<section class="philosophy">
+  <div class="container">
+    <div class="philosophy-inner">
+
+      <div class="philosophy-img reveal">
+        <!-- ★ ADD IMAGE: <img src="images/chef-cooking.webp" alt="Chef Rajesh in the kitchen"> -->
+        <div class="philosophy-img-placeholder img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8">
+            <path d="M3 2h18v4H3zM3 8l3 14h12l3-14"/>
+          </svg>
+          <span>Kitchen / Cooking Photo</span>
+          <span class="ph-note">600×600px · square</span>
+        </div>
+      </div>
+
+      <div class="philosophy-text reveal">
+        <span class="eyebrow">The Philosophy</span>
+        <h2>The Art of Cooking</h2>
+        <div class="divider"><div class="divider-icon">♨</div></div>
+        <blockquote>
+          "The true art of cooking lies in the harmony of the right ingredients, the right timing, the right temperature, the right cookware, and serving it the right way."
+          <footer style="margin-top:0.6rem;font-size:0.78rem;font-style:normal;letter-spacing:0.1em;color:var(--gold)">— Chef Rajesh Abraham</footer>
+        </blockquote>
+        <p>Food is not just something to fill the stomach. It is <strong>fuel for the body, comfort for the soul,</strong> and a gift for the next generation.</p>
+        <p>Taking a little time to cook at home brings awareness to what we eat. Well-prepared food, made with fresh ingredients and proper technique, is always a <strong>more balanced choice</strong> than highly processed alternatives.</p>
+        <a href="about.html" class="btn btn-outline btn-arrow" style="margin-top:1.25rem">About Chef Rajesh</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10 GOLDEN RULES ═══ -->
+<section class="rules section">
+  <div class="container">
+    <div class="rules-header reveal">
+      <span class="eyebrow">The Kitchen Code</span>
+      <h2>10 Golden Cooking Rules</h2>
+    </div>
+    <div class="rules-grid" role="list">
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">01</span>
+        <div class="rule-icon">♨</div>
+        <h4>Good Ingredients</h4>
+        <p>Great cooking begins with fresh, quality ingredients. Let natural flavour shine.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">02</span>
+        <div class="rule-icon">♨</div>
+        <h4>Keep It Simple</h4>
+        <p>The best dishes are often the simplest. Good food doesn't need complexity.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">03</span>
+        <div class="rule-icon">♨</div>
+        <h4>Right Heat</h4>
+        <p>Cooking is about temperature control. The right heat unlocks the best flavour.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">04</span>
+        <div class="rule-icon">♨</div>
+        <h4>Season with Balance</h4>
+        <p>Salt, acidity, herbs, and spices should enhance — not overpower — the dish.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">05</span>
+        <div class="rule-icon">♨</div>
+        <h4>Taste as You Cook</h4>
+        <p>Your palate is your best tool. Taste often and adjust seasoning as needed.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">06</span>
+        <div class="rule-icon">♨</div>
+        <h4>Respect Time</h4>
+        <p>Some dishes need speed, others need patience. Good cooking understands both.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">07</span>
+        <div class="rule-icon">♨</div>
+        <h4>Stay Organised</h4>
+        <p>A clean kitchen makes cooking smoother, safer, and more enjoyable.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">08</span>
+        <div class="rule-icon">♨</div>
+        <h4>Cook with Awareness</h4>
+        <p>Know what you are eating and where your ingredients come from.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">09</span>
+        <div class="rule-icon">♨</div>
+        <h4>Health &amp; Happiness</h4>
+        <p>Food should nourish the body and bring comfort to the soul.</p>
+      </div>
+      <div class="rule-item reveal" role="listitem">
+        <span class="rule-num">10</span>
+        <div class="rule-icon">♨</div>
+        <h4>Share the Experience</h4>
+        <p>Cooking is about creating moments and memories with others.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURED RECIPES ═══ -->
+<section class="featured">
+  <div class="container">
+    <div class="featured-header reveal">
+      <span class="eyebrow">From the Kitchen</span>
+      <h2>Featured Recipes</h2>
+    </div>
+    <div class="featured-grid">
+
+      <!-- Big card -->
+      <a href="recipes/herb-grilled-beef-steak.html" class="featured-card reveal">
+        <div class="featured-card-img">
+          <!-- ★ ADD IMAGE: <img src="images/thumbnails/herb-grilled-beef-steak.webp" alt="Herb-Grilled Beef Steak"> -->
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg>
+            <span>Recipe Photo</span>
+          </div>
+        </div>
+        <div class="featured-overlay"></div>
+        <div class="featured-info">
+          <h3>Herb-Grilled Beef Steak with Thyme Roasted Potatoes</h3>
+        </div>
+      </a>
+
+      <a href="recipes/rosemary-grilled-salmon-broccoli.html" class="featured-card reveal">
+        <div class="featured-card-img">
+          <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg><span>Recipe Photo</span></div>
+        </div>
+        <div class="featured-overlay"></div>
+        <div class="featured-info"><h3>Rosemary Grilled Salmon with Broccoli &amp; Asparagus</h3></div>
+      </a>
+
+      <a href="recipes/woodland-mushroom-chicken-risotto.html" class="featured-card reveal">
+        <div class="featured-card-img">
+          <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg><span>Recipe Photo</span></div>
+        </div>
+        <div class="featured-overlay"></div>
+        <div class="featured-info"><h3>Woodland Mushroom &amp; Chicken Risotto</h3></div>
+      </a>
+
+      <a href="recipes/lobster-bake-garlic-lemon.html" class="featured-card reveal">
+        <div class="featured-card-img">
+          <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg><span>Recipe Photo</span></div>
+        </div>
+        <div class="featured-overlay"></div>
+        <div class="featured-info"><h3>Lobster Bake with Garlic Lemon Butter Sauce</h3></div>
+      </a>
+
+    </div>
+    <div class="featured-cta">
+      <a href="recipes.html" class="btn btn-gold btn-arrow">View All 42 Recipes</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HIRE CTA ═══ -->
+<section class="hire section">
+  <div class="container">
+    <div class="hire-inner">
+      <div class="hire-text reveal">
+        <span class="eyebrow">Available for Hire</span>
+        <h2>Bring World-Class Culinary Leadership to Your Kitchen</h2>
+        <p>Primarily open to Full-Time Culinary Leadership Roles in International Hospitality. Also available for culinary consulting and select private chef engagements.</p>
+        <a href="contact.html" class="btn btn-primary btn-arrow">Get in Touch</a>
+      </div>
+      <div class="stats-grid reveal" aria-label="Career statistics">
+        <div class="stat-item">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Countries</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">42+</span>
+          <span class="stat-label">Signature Recipes</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Passion for Food</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Chef <span>Rajesh</span></div>
+        <p>Executive Chef with over two decades of experience across the UAE, Bahrain, Saudi Arabia, and India. Crafting refined, memorable dining experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Recipes</h5>
+        <a href="recipes.html">Breakfast</a>
+        <a href="recipes.html">Anytime Meals</a>
+        <a href="recipes.html">Worth the Wait</a>
+        <a href="recipes.html">Express Creations</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="about.html">Executive Chef</a>
+        <a href="about.html">Consulting</a>
+        <a href="about.html">Meal Planning</a>
+        <a href="about.html">Cooking Classes</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Chef Rajesh Abraham. All rights reserved.</span>
+      <span>Crafted with passion &amp; precision.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/recipes.js"></script>
+</body>
+</html>

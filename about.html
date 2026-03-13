@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Chef Rajesh Abraham</title>
+  <meta name="description" content="Born in Kerala, Chef Rajesh Abraham has built a 20+ year culinary career across the UAE, Bahrain, Saudi Arabia and India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ═══════════════════════
+       ABOUT PAGE STYLES
+       ═══════════════════════ */
+
+    /* ── BIO ── */
+    .bio { background: var(--cream); padding: var(--section-py) 0; }
+    .bio-grid {
+      display: grid; grid-template-columns: 1fr 1.1fr;
+      gap: clamp(2.5rem, 6vw, 6rem); align-items: center;
+    }
+    .bio-img-wrap {
+      position: relative;
+      padding-bottom: 1.5rem; padding-right: 1.5rem;
+    }
+    .bio-img-inner {
+      aspect-ratio: 3/4; overflow: hidden; position: relative;
+    }
+    .bio-img-inner img { width: 100%; height: 100%; object-fit: cover; }
+    .bio-img-placeholder { width: 100%; height: 100%; min-height: 320px; }
+    .bio-img-wrap::after {
+      content: ''; position: absolute; bottom: 0; right: 0;
+      width: 60%; height: 60%; border: 1px solid var(--gold); z-index: 0;
+    }
+    .bio-img-inner { position: relative; z-index: 1; }
+    .bio-tag {
+      position: absolute; bottom: 0; right: 0; z-index: 2;
+      background: var(--gold); color: var(--charcoal);
+      padding: 1.1rem 1.5rem;
+      font-family: var(--ff-display);
+    }
+    .bio-tag strong { display: block; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1; }
+    .bio-tag span { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    .bio-text .eyebrow { }
+    .bio-text h2 { margin-bottom: 0.75rem; }
+    .bio-text p { color: var(--smoke); margin-bottom: 1rem; line-height: 1.85; }
+    .bio-highlights {
+      display: flex; gap: clamp(1rem, 3vw, 2rem); flex-wrap: wrap;
+      margin: 1.75rem 0;
+    }
+    .bio-highlight { text-align: center; }
+    .bio-highlight strong {
+      font-family: var(--ff-display); font-size: clamp(2rem, 3.5vw, 2.6rem);
+      color: var(--gold); display: block; line-height: 1;
+    }
+    .bio-highlight span { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--smoke); }
+
+    /* ── EXPERTISE ── */
+    .expertise { padding: var(--section-py) 0; }
+    .expertise-header { text-align: center; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+    .expertise-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+    .expertise-card {
+      background: var(--cream); padding: clamp(1.5rem, 2.5vw, 2.25rem) clamp(1.25rem, 2vw, 1.75rem);
+      text-align: center;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .expertise-card:hover {
+      border-color: var(--gold); transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+    }
+    .exp-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .expertise-card h4 {
+      font-family: var(--ff-display); font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      margin-bottom: 0.65rem; font-weight: 400;
+    }
+    .expertise-card p { font-size: 0.84rem; color: var(--smoke); line-height: 1.7; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--charcoal); padding: var(--section-py) 0; }
+    .testi-header { text-align: center; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+    .testi-header .eyebrow { color: var(--gold-light); }
+    .testi-header h2 { color: var(--cream); margin-bottom: 0.3rem; }
+    .testi-header p { color: rgba(245,240,232,0.38); font-style: italic; font-size: 0.9rem; }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+    .testi-card {
+      background: rgba(245,240,232,0.046);
+      border: 1px solid rgba(245,240,232,0.07);
+      padding: clamp(1.5rem, 2.5vw, 2.25rem); position: relative;
+    }
+    .testi-card::before {
+      content: '\201C';
+      position: absolute; top: 0.75rem; left: 1.25rem;
+      font-family: var(--ff-display); font-size: 4.5rem;
+      color: var(--gold); opacity: 0.25; line-height: 1; pointer-events: none;
+    }
+    .testi-text {
+      color: rgba(245,240,232,0.65); font-style: italic;
+      line-height: 1.8; margin-bottom: 1.25rem; font-size: 0.92rem;
+      position: relative; z-index: 1;
+    }
+    .testi-author strong { display: block; color: var(--cream); font-size: 0.9rem; }
+    .testi-author span { color: var(--gold); font-size: 0.75rem; }
+
+    /* ── AVAILABLE ── */
+    .available { background: var(--cream); padding: var(--section-py) 0; }
+    .available-grid {
+      display: grid; grid-template-columns: 1.1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem); align-items: start;
+    }
+    .available-text h2 { margin-bottom: 0.75rem; }
+    .available-text p { color: var(--smoke); margin-bottom: 1.75rem; }
+    .role-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .role-item {
+      display: flex; gap: 1.1rem; align-items: flex-start;
+      border: 1px solid var(--line); padding: clamp(1rem, 2vw, 1.4rem);
+      background: var(--warm-white);
+      transition: border-color 0.3s;
+    }
+    .role-item:hover { border-color: var(--gold); }
+    .role-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .role-body h5 { font-family: var(--ff-display); font-size: 1.1rem; margin-bottom: 0.2rem; font-weight: 400; }
+    .role-body p { font-size: 0.82rem; color: var(--smoke); margin: 0; line-height: 1.6; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .bio-grid { grid-template-columns: 1fr; }
+      .bio-img-wrap { padding-bottom: 1.25rem; padding-right: 1.25rem; max-width: 480px; }
+      .bio-img-wrap::after { display: none; }
+      .bio-tag { right: 0; }
+
+      .testi-grid { grid-template-columns: 1fr; }
+      .available-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+      .bio-highlights { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner container">
+  <a href="index.html" class="nav-logo">Chef <span>Rajesh</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="recipes.html">Recipes</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a><a href="recipes.html">Recipes</a>
+  <a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="page-header-bg-text" aria-hidden="true">ABOUT</div>
+  <div class="container" style="position:relative;z-index:1">
+    <span class="eyebrow fade-in">A Life Lived in the Kitchen</span>
+    <h1 class="fade-in">Chef Rajesh Abraham</h1>
+    <p class="fade-in">Executive Chef · Culinary Leader · Innovator</p>
+  </div>
+</header>
+
+<!-- BIO -->
+<section class="bio">
+  <div class="container">
+    <div class="bio-grid">
+
+      <div class="bio-img-wrap reveal">
+        <div class="bio-img-inner">
+          <!-- ★ ADD IMAGE: <img src="images/chef-portrait.webp" alt="Chef Rajesh Abraham"> -->
+          <div class="bio-img-placeholder img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8">
+              <circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0116 0v2"/>
+            </svg>
+            <span>Chef Portrait Photo</span>
+            <span class="ph-note">Recommended: 600×800px portrait</span>
+          </div>
+        </div>
+        <div class="bio-tag">
+          <strong>2000</strong>
+          <span>Career began</span>
+        </div>
+      </div>
+
+      <div class="bio-text reveal">
+        <span class="eyebrow">Born in Kerala, India — the Spice Region</span>
+        <h2>A Refined Culinary Journey</h2>
+        <div class="divider"><div class="divider-icon">♨</div></div>
+        <p>Chef Rajesh Abraham began his culinary journey in 2000 and has built a career spanning over two decades across the UAE, Bahrain, Saudi Arabia, and India.</p>
+        <p>With strong expertise in menu development, kitchen operations, and team leadership, he combines culinary creativity with operational discipline to deliver refined and memorable dining experiences.</p>
+        <p>His philosophy is centred on using the right ingredients, technique, temperature, and timing to create balanced and satisfying cuisine that nourishes both body and soul.</p>
+        <div class="bio-highlights">
+          <div class="bio-highlight"><strong>20+</strong><span>Years Exp.</span></div>
+          <div class="bio-highlight"><strong>4</strong><span>Countries</span></div>
+          <div class="bio-highlight"><strong>42+</strong><span>Recipes</span></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-arrow">Get in Touch</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise" id="services">
+  <div class="container">
+    <div class="expertise-header reveal">
+      <span class="eyebrow">Core Expertise</span>
+      <h2>A Refined Culinary &amp; Operational Expertise</h2>
+      <p class="lead" style="max-width:580px;margin:0.75rem auto 0">Developed across two decades of professional kitchen leadership.</p>
+      <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:1.25rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">
+        <span>Culinary Innovation</span><span>·</span><span>Kitchen Leadership</span><span>·</span><span>Operational Excellence</span>
+      </div>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card reveal">
+        <div class="exp-icon">👨‍🍳</div>
+        <h4>Full-Time Culinary Leadership</h4>
+        <p>Executive Chef / Head Chef roles in international hotels and restaurants, bringing over two decades of kitchen leadership, menu development, and operational excellence.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="exp-icon">🥗</div>
+        <h4>Meal Planning &amp; Nutrition</h4>
+        <p>Customised meal plans and dietary menus tailored to individual health goals, including low-carb, high-protein, and other personalised nutrition plans.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="exp-icon">🏨</div>
+        <h4>Culinary Consulting</h4>
+        <p>Comprehensive support for restaurants and hospitality ventures — concept development, pre-opening planning, menu design, and operational guidance.</p>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="exp-icon">📚</div>
+        <h4>Cooking Classes</h4>
+        <p>Personalised sessions for individuals or small groups — culinary techniques, healthy cooking, and regional cuisines in an engaging, practical format.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testi-header reveal">
+      <span class="eyebrow">What They Say</span>
+      <h2>Words from Owners &amp; Management</h2>
+      <p>Trusted across the UAE hospitality industry</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-text">"Chef Rajesh built our restaurant's menu, kitchen setup, and operational standards from scratch. His professionalism, commitment to food quality, and ability to lead a team under pressure made a significant impact on our operations."</p>
+        <div class="testi-author">
+          <strong>Mr. Murad &amp; Mr. Faisal Saeed</strong>
+          <span>Owners, Sandwikaa Restaurant, Ajman UAE</span>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-text">"Chef Rajesh created a unique health-focused dining experience. In collaboration with our nutritionist team, he developed calorie-based menus and meal plans that set a new standard for wellness dining in Al Ain."</p>
+        <div class="testi-author">
+          <strong>Mr. Khalfan Salem</strong>
+          <span>Owner, Shape Fine Dining Healthy Restaurant, UAE</span>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-text">"Rajesh brings a rare balance of culinary creativity and operational discipline. His ability to control food costs, maintain consistency, and manage the kitchen team effectively contributed significantly to our food service."</p>
+        <div class="testi-author">
+          <strong>Mr. Omar</strong>
+          <span>General Manager, Baity Hotel Apartment, Dubai UAE</span>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-text">"Chef Rajesh brought creativity, discipline, and strong leadership to our kitchen. His focus on healthy menu development, quality ingredients, and operational consistency helped enhance both our food standards and guest experience."</p>
+        <div class="testi-author">
+          <strong>Khaled Mohammed</strong>
+          <span>Owner, Mellows Wholesome Eatery, Ras Al Khaimah, UAE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVAILABLE FOR HIRE -->
+<section class="available">
+  <div class="container">
+    <div class="available-grid">
+      <div class="available-text reveal">
+        <span class="eyebrow">Available for Hire</span>
+        <h2>Let's Create Something Extraordinary</h2>
+        <p>Primarily open to Full-Time Culinary Leadership Roles in International Hospitality. Also available for culinary consulting and select private chef engagements.</p>
+        <a href="contact.html" class="btn btn-primary btn-arrow">Contact Chef Rajesh</a>
+      </div>
+      <div class="role-list reveal">
+        <div class="role-item">
+          <div class="role-icon">👨‍🍳</div>
+          <div class="role-body">
+            <h5>Executive / Head Chef</h5>
+            <p>Full-time leadership roles at international hotels and restaurants.</p>
+          </div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon">🏨</div>
+          <div class="role-body">
+            <h5>Culinary Consulting</h5>
+            <p>Pre-opening support, concept development, and kitchen optimisation.</p>
+          </div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon">🥗</div>
+          <div class="role-body">
+            <h5>Nutrition Menu Design</h5>
+            <p>Health-focused menus for wellness restaurants and clients.</p>
+          </div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon">📚</div>
+          <div class="role-body">
+            <h5>Private Cooking Classes</h5>
+            <p>Personalised sessions on technique, cuisine, and healthy cooking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="nav-logo">Chef <span>Rajesh</span></div><p>Executive Chef with over two decades of experience across the UAE, Bahrain, Saudi Arabia, and India.</p></div>
+    <div class="footer-col"><h5>Navigate</h5><a href="index.html">Home</a><a href="recipes.html">Recipes</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h5>Categories</h5><a href="recipes.html">Breakfast</a><a href="recipes.html">Anytime Meals</a><a href="recipes.html">Worth the Wait</a><a href="recipes.html">Express Creations</a></div>
+    <div class="footer-col"><h5>Services</h5><a href="#services">Executive Chef</a><a href="#services">Consulting</a><a href="#services">Meal Planning</a><a href="#services">Cooking Classes</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Chef Rajesh Abraham. All rights reserved.</span><span>Crafted with passion &amp; precision.</span></div>
+</div></footer>
+<script src="js/recipes.js"></script>
+</body>
+</html>

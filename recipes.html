@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Recipes — Chef Rajesh Abraham</title>
+  <meta name="description" content="Browse 42+ signature recipes from Executive Chef Rajesh Abraham. Search by name or filter by Breakfast, Anytime Meals, Worth the Wait, or Express Creations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ═══════════════════════════
+       RECIPES PAGE STYLES
+       ═══════════════════════════ */
+
+    /* ── SEARCH BAR SECTION ── */
+    .search-zone {
+      background: var(--cream);
+      padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 4px 20px rgba(28,28,26,0.05);
+    }
+    .search-zone-inner {
+      display: flex; flex-direction: column;
+      gap: clamp(0.9rem, 2vw, 1.25rem);
+    }
+    .search-bar-wrap {
+      position: relative; max-width: 640px; width: 100%;
+    }
+    .search-icon-wrap {
+      position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+      color: var(--smoke); pointer-events: none; display: flex;
+    }
+    #recipe-search {
+      width: 100%;
+      padding: 0.85rem 3rem 0.85rem 3rem;
+      border: 1.5px solid var(--line);
+      background: var(--warm-white);
+      font-family: var(--ff-body);
+      font-size: 0.95rem; color: var(--charcoal);
+      outline: none; transition: border-color 0.25s, box-shadow 0.25s;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    #recipe-search::placeholder { color: var(--mist); }
+    #recipe-search:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(196,154,60,0.12);
+    }
+    #search-clear {
+      position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%);
+      display: none; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+      color: var(--mist); font-size: 1.1rem; padding: 6px;
+      transition: color var(--transition); line-height: 1;
+    }
+    #search-clear:hover { color: var(--charcoal); }
+
+    /* ── FILTER ROW ── */
+    .filter-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.75rem; flex-wrap: wrap;
+    }
+    .filter-pills { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .filter-pill {
+      padding: 0.42rem 1rem;
+      font-family: var(--ff-body);
+      font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: transparent; color: var(--smoke);
+      border: 1px solid var(--line); cursor: pointer;
+      transition: var(--transition); white-space: nowrap;
+      -webkit-appearance: none;
+    }
+    .filter-pill:hover { border-color: var(--gold); color: var(--gold); }
+    .filter-pill.active {
+      background: var(--charcoal); color: var(--cream);
+      border-color: var(--charcoal);
+    }
+    #recipe-count {
+      font-size: 0.78rem; color: var(--mist);
+      white-space: nowrap; flex-shrink: 0; margin-left: auto;
+    }
+
+    /* ── RECIPE GRID ── */
+    .recipes-main { padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(4rem, 8vw, 7rem); }
+    #recipes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1rem, 2vw, 1.75rem);
+    }
+
+    /* ── EMPTY STATE ── */
+    .recipes-empty {
+      grid-column: 1 / -1;
+      text-align: center; padding: 5rem 2rem;
+    }
+    .recipes-empty .empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .recipes-empty h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .recipes-empty p { color: var(--smoke); }
+
+    /* ── CATEGORY INTRO BANNER ── */
+    .cat-intro {
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .cat-intro-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 4rem);
+    }
+    .cat-intro-block { }
+    .cat-intro-block .eyebrow { margin-bottom: 0.3rem; }
+    .cat-intro-block h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); margin-bottom: 0.4rem; }
+    .cat-intro-block p { color: var(--smoke); font-size: 0.92rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #recipes-grid { grid-template-columns: repeat(2, 1fr); }
+      .cat-intro-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    @media (max-width: 640px) {
+      .filter-pills { gap: 0.3rem; }
+      .filter-pill { font-size: 0.62rem; padding: 0.38rem 0.75rem; }
+      #recipe-count { font-size: 0.72rem; }
+    }
+    @media (max-width: 520px) {
+      #recipes-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">Chef <span>Rajesh</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html" class="active">Recipes</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header-bg-text" aria-hidden="true">RECIPES</div>
+  <div class="container" style="position:relative;z-index:1">
+    <span class="eyebrow fade-in">Chef Rajesh Abraham</span>
+    <h1 class="fade-in">My Recipes</h1>
+    <p class="fade-in">42 Signature Dishes — From Quick Breakfasts to Gourmet Feasts</p>
+  </div>
+</header>
+
+<!-- CATEGORY INTRO -->
+<section class="cat-intro">
+  <div class="container">
+    <div class="cat-intro-grid">
+      <div class="cat-intro-block reveal">
+        <span class="eyebrow">🍳 Breakfast</span>
+        <h3>Worth the Wait</h3>
+        <p>Not every great dish is a 10-minute sprint — some flavours prefer a slow walk.</p>
+      </div>
+      <div class="cat-intro-block reveal">
+        <span class="eyebrow">🍽 Anytime Meals</span>
+        <h3>Express Creations</h3>
+        <p>Healthy, satisfying meals without spending hours in the kitchen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH + FILTERS (sticky) -->
+<div class="search-zone" id="search-zone">
+  <div class="container">
+    <div class="search-zone-inner">
+      <div class="search-bar-wrap">
+        <span class="search-icon-wrap" aria-hidden="true">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </span>
+        <input
+          type="search"
+          id="recipe-search"
+          placeholder="Search recipes… e.g. Salmon, Biryani, Chicken"
+          aria-label="Search recipes"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button id="search-clear" aria-label="Clear search">✕</button>
+      </div>
+      <div class="filter-row">
+        <div class="filter-pills" role="group" aria-label="Filter by category">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="breakfast">🍳 Breakfast</button>
+          <button class="filter-pill" data-filter="anytime">🍽 Anytime</button>
+          <button class="filter-pill" data-filter="worth-the-wait">⏳ Worth the Wait</button>
+          <button class="filter-pill" data-filter="express">⚡ Express</button>
+        </div>
+        <span id="recipe-count" aria-live="polite" aria-atomic="true"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RECIPE GRID -->
+<main class="recipes-main" aria-label="Recipe listing">
+  <div class="container">
+    <div id="recipes-grid" role="list"></div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Chef <span>Rajesh</span></div>
+        <p>Executive Chef with over two decades of experience across the UAE, Bahrain, Saudi Arabia, and India.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a><a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Categories</h5>
+        <a href="recipes.html">Breakfast</a><a href="recipes.html">Anytime Meals</a>
+        <a href="recipes.html">Worth the Wait</a><a href="recipes.html">Express Creations</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="about.html">Executive Chef</a><a href="about.html">Consulting</a>
+        <a href="about.html">Meal Planning</a><a href="about.html">Cooking Classes</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Chef Rajesh Abraham. All rights reserved.</span>
+      <span>Crafted with passion &amp; precision.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/recipes.js"></script>
+<script src="js/search.js"></script>
+<script>document.addEventListener('DOMContentLoaded', initRecipePage);</script>
+</body>
+</html>
