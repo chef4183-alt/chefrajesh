@@ -52,7 +52,8 @@
       display: flex; gap: clamp(1rem, 3vw, 2.5rem);
       flex-wrap: wrap; margin-top: 1.25rem;
     }
-    .meta-item { display: flex; align-items: center; gap: 0.45rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .meta-item svg { stroke: rgba(245,240,232,0.5); flex-shrink: 0; }
     .meta-item span { color: rgba(245,240,232,0.55); font-size: 0.82rem; }
     .meta-item strong { color: var(--cream); font-size: 0.82rem; font-weight: 500; }
 
@@ -218,10 +219,22 @@
     <h1>Herb-Grilled Beef Steak with Thyme Roasted Potatoes</h1>
     <p class="by">By Chef Rajesh Abraham</p>
     <div class="recipe-meta-bar">
-      <div class="meta-item"><span>🕐</span><strong>Prep:</strong><span>20 min</span></div>
-      <div class="meta-item"><span>🔥</span><strong>Cook:</strong><span>30 min</span></div>
-      <div class="meta-item"><span>👥</span><strong>Serves:</strong><span>2</span></div>
-      <div class="meta-item"><span>⭐</span><strong>Skill:</strong><span>Intermediate</span></div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+        <strong>Prep:</strong><span>20 min</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2c-1 3-4 5-4 8a4 4 0 0 0 8 0c0-3-3-5-4-8z"/></svg>
+        <strong>Cook:</strong><span>30 min</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <strong>Serves:</strong><span>2</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <strong>Skill:</strong><span>Intermediate</span>
+      </div>
     </div>
   </div>
 </header>
@@ -335,7 +348,7 @@
         </div>
 
         <div class="tips-box reveal">
-          <h4>♨ Chef Rajesh's Tips</h4>
+          <h4>Chef Rajesh's Tips</h4>
           <ul class="tips-list">
             <li>Always bring steak to room temperature before cooking — cold meat will steam instead of sear.</li>
             <li>Use a meat thermometer: 52°C for rare, 57°C for medium-rare, 63°C for medium.</li>

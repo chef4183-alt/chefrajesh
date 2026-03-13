@@ -294,28 +294,50 @@ h4 { font-size: clamp(1.1rem, 1.8vw, 1.3rem); }
   font-size: 0.78rem; color: rgba(245,240,232,0.3);
 }
 
+/* ─── FOOTER SOCIAL ICONS ─── */
+.footer-social {
+  display: flex; gap: 0.6rem; margin-top: 1.25rem;
+}
+.footer-social-link {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(245,240,232,0.12);
+  transition: var(--transition);
+}
+.footer-social-link:hover { border-color: var(--gold); background: rgba(196,154,60,0.1); }
+.footer-social-link svg { width: 16px; height: 16px; }
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
+  from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* fade-in: CSS-only, runs on page load — no JS needed */
 .fade-in {
-  opacity: 0; animation: fadeUp 0.85s var(--ease-out) forwards;
+  animation: fadeUp 0.85s var(--ease-out) both;
 }
-.fade-in:nth-child(1) { animation-delay: 0.1s; }
-.fade-in:nth-child(2) { animation-delay: 0.22s; }
-.fade-in:nth-child(3) { animation-delay: 0.34s; }
-.fade-in:nth-child(4) { animation-delay: 0.46s; }
+.fade-in:nth-child(1) { animation-delay: 0.08s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.32s; }
+.fade-in:nth-child(4) { animation-delay: 0.44s; }
 
+/* reveal: always visible — JS adds .visible for enhanced scroll animation
+   but content is NEVER hidden if JS fails or is slow */
 .reveal {
-  opacity: 0; transform: translateY(36px);
-  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Fallback: if JS fails or hasn't run yet, still show content */
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+/* When JS runs successfully, briefly animate in */
+.reveal.js-ready {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.reveal.js-ready.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ─── RECIPE CARD (shared) ─── */
