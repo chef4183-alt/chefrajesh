@@ -313,6 +313,11 @@ h4 { font-size: clamp(1.1rem, 1.8vw, 1.3rem); }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* Fallback: if JS fails or hasn't run yet, still show content */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* ─── RECIPE CARD (shared) ─── */
 .recipe-card { background: var(--warm-white); overflow: hidden; display: flex; flex-direction: column; }
 .recipe-card-link { display: flex; flex-direction: column; flex: 1; }
