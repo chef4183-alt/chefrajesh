@@ -1,34 +1,8 @@
 /* ============================================
-   recipes.js — Nav, Reveal, Hamburger
-   Strategy: content is ALWAYS visible.
-   Scroll animation is progressive enhancement only.
+   recipes.js — Nav, Hamburger, Scroll
+   NO opacity hiding. NO js-ready. NO transforms.
+   All content is always visible.
    ============================================ */
-
-/* ============================================
-   recipes.js — Nav, Reveal, Hamburger
-   Reveal: content is ALWAYS visible.
-   Animation is pure CSS, no JS hiding.
-   ============================================ */
-
-/* ─── SCROLL REVEAL ─── */
-function initReveal() {
-  if (!('IntersectionObserver' in window)) return;
-
-  const obs = new IntersectionObserver(
-    (entries) => entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    }),
-    { threshold: 0.05, rootMargin: '0px 0px -30px 0px' }
-  );
-
-  // Only animate elements that are NOT yet visible
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-    obs.observe(el);
-  });
-}
 
 /* ─── STICKY NAV ─── */
 function initNav() {
@@ -90,31 +64,18 @@ function initNavLogoColor() {
   update();
 }
 
-/* ─── INIT ALL ─── */
+/* ─── INIT ─── */
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initActiveNav();
   initHamburger();
   initNavLogoColor();
-  setTimeout(initReveal, 150);
 
-  // Watch for dynamically added recipe cards
+  // Watch for dynamically added recipe cards (recipes.html page only)
   const grid = document.getElementById('recipes-grid');
   if (grid) {
     new MutationObserver(() => {
-      grid.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-        el.classList.add('visible');
-      });
-      setTimeout(initReveal, 60);
+      grid.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
     }).observe(grid, { childList: true });
   }
-});
-
-// Final safety net — ensure nothing is ever stuck invisible
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-      el.classList.add('visible');
-    });
-  }, 600);
 });

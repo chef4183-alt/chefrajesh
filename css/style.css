@@ -322,15 +322,14 @@ h4 { font-size: clamp(1.1rem, 1.8vw, 1.3rem); }
 .fade-in:nth-child(3) { animation-delay: 0.32s; }
 .fade-in:nth-child(4) { animation-delay: 0.44s; }
 
-/* reveal: always visible by default.
-   JS adds .visible class for a subtle fade-in animation.
-   Content is NEVER hidden — .visible just adds the animation. */
-.reveal {
-  opacity: 1;
-  transform: none;
-}
+/* reveal: ALWAYS VISIBLE — no hiding, no animation dependency */
+.reveal,
+.reveal.js-ready,
 .reveal.visible {
-  animation: fadeUp 0.7s var(--ease-out) both;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
 }
 
 /* ─── RECIPE CARD (shared) ─── */
