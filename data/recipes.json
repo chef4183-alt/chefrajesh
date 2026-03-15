@@ -1,0 +1,614 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "slug": "herb-grilled-beef-steak-with-thyme-roasted-potatoes",
+      "title": "Herb-grilled Beef Steak with Thyme Roasted Potatoes",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/HERB-GRILLED BEEF STEAK WITH THYME ROASTED POTATOES_01.webp",
+      "thumb": "images/thumbnails/HERB-GRILLED BEEF STEAK WITH THYME ROASTED POTATOES_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "20–25 minutes"
+    },
+    {
+      "id": 2,
+      "slug": "lobster-bake-with-garlic-lemon-butter-sauce",
+      "title": "Lobster Bake with Garlic Lemon Butter Sauce",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/LOBSTER BAKE WITH GARLIC LEMON BUTTER SAUCE_01.webp",
+      "thumb": "images/thumbnails/LOBSTER BAKE WITH GARLIC LEMON BUTTER SAUCE_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 3,
+      "slug": "avocado-smoked-turkey-stuffed-eggs",
+      "title": "Avocado & Smoked Turkey Stuffed Eggs",
+      "category": [
+        "breakfast",
+        "express"
+      ],
+      "image": "images/recipes/AVOCADO & SMOKED TURKEY STUFFED EGGS_01.webp",
+      "thumb": "images/thumbnails/AVOCADO & SMOKED TURKEY STUFFED EGGS_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "8 minutes"
+    },
+    {
+      "id": 4,
+      "slug": "banana-peanut-butter-stuffed-protein-bread",
+      "title": "Banana & Peanut Butter Stuffed Protein Bread",
+      "category": [
+        "breakfast",
+        "express"
+      ],
+      "image": "images/recipes/BANANA & PEANUT BUTTER STUFFED PROTEIN BREAD_01.webp",
+      "thumb": "images/thumbnails/BANANA & PEANUT BUTTER STUFFED PROTEIN BREAD_01.webp",
+      "serves": "1",
+      "prep_time": "5 minutes",
+      "cook_time": "3–4 minutes"
+    },
+    {
+      "id": 5,
+      "slug": "saffron-chia-pudding",
+      "title": "Saffron Chia Pudding",
+      "category": [
+        "breakfast",
+        "express"
+      ],
+      "image": "images/recipes/SAFFRON CHIA PUDDING_01.webp",
+      "thumb": "images/thumbnails/SAFFRON CHIA PUDDING_01.webp",
+      "serves": "1–2",
+      "prep_time": "5 minutes",
+      "cook_time": ""
+    },
+    {
+      "id": 6,
+      "slug": "egg-white-omelet-with-thyme",
+      "title": "Egg White Omelet with Thyme",
+      "category": [
+        "breakfast",
+        "express"
+      ],
+      "image": "images/recipes/EGG WHITE OMELET WITH THYME_01.webp",
+      "thumb": "images/thumbnails/EGG WHITE OMELET WITH THYME_01.webp",
+      "serves": "1",
+      "prep_time": "5 minutes",
+      "cook_time": "5 minutes"
+    },
+    {
+      "id": 7,
+      "slug": "italian-lean-bolognese-pasta",
+      "title": "Italian Lean Bolognese Pasta",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/ITALIAN LEAN BOLOGNESE PASTA_01.webp",
+      "thumb": "images/thumbnails/ITALIAN LEAN BOLOGNESE PASTA_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "30 minutes"
+    },
+    {
+      "id": 8,
+      "slug": "grilled-chicken-with-cashew-cream-sauce",
+      "title": "Grilled Chicken with Cashew Cream Sauce",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/GRILLED CHICKEN WITH CASHEW CREAM SAUCE_01.webp",
+      "thumb": "images/thumbnails/GRILLED CHICKEN WITH CASHEW CREAM SAUCE_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "15 minutes"
+    },
+    {
+      "id": 9,
+      "slug": "leanchicken-turkey-roulade-couscous",
+      "title": "Leanchicken Turkey Roulade Couscous",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/LEANCHICKEN TURKEY ROULADE COUSCOUS_01.webp",
+      "thumb": "images/thumbnails/LEANCHICKEN TURKEY ROULADE COUSCOUS_01.webp",
+      "serves": "1",
+      "prep_time": "15 minutes",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 10,
+      "slug": "rosemary-grilled-salmon-with-broccoli-asparagus",
+      "title": "Rosemary Grilled Salmon with Broccoli & Asparagus",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/ROSEMARY GRILLED SALMON WITH BROCCOLI & ASPARAGUS_01.webp",
+      "thumb": "images/thumbnails/ROSEMARY GRILLED SALMON WITH BROCCOLI & ASPARAGUS_01.webp",
+      "serves": "1",
+      "prep_time": "5 minutes",
+      "cook_time": "10 minutes"
+    },
+    {
+      "id": 11,
+      "slug": "green-quinoa-power-bowl",
+      "title": "Green Quinoa Power Bowl",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/GREEN QUINOA POWER BOWL_01.webp",
+      "thumb": "images/thumbnails/GREEN QUINOA POWER BOWL_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "10 minutes"
+    },
+    {
+      "id": 12,
+      "slug": "spiced-tomato-shakshuka-poached-eggs",
+      "title": "Spiced Tomato Shakshuka Poached Eggs",
+      "category": [
+        "breakfast",
+        "express"
+      ],
+      "image": "images/recipes/SPICED TOMATO SHAKSHUKA POACHED EGGS_01.webp",
+      "thumb": "images/thumbnails/SPICED TOMATO SHAKSHUKA POACHED EGGS_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "15 minutes"
+    },
+    {
+      "id": 13,
+      "slug": "green-apple-quinoa-tabbouleh",
+      "title": "Green Apple Quinoa Tabbouleh",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/GREEN APPLE QUINOA TABBOULEH_01.webp",
+      "thumb": "images/thumbnails/GREEN APPLE QUINOA TABBOULEH_01.webp",
+      "serves": "2",
+      "prep_time": "",
+      "cook_time": ""
+    },
+    {
+      "id": 14,
+      "slug": "sweet-corn-delight-salad",
+      "title": "Sweet Corn Delight Salad",
+      "category": [
+        "anytime",
+        "express"
+      ],
+      "image": "images/recipes/SWEET CORN DELIGHT SALAD_01.webp",
+      "thumb": "images/thumbnails/SWEET CORN DELIGHT SALAD_01.webp",
+      "serves": "2",
+      "prep_time": "",
+      "cook_time": ""
+    },
+    {
+      "id": 15,
+      "slug": "creamy-kale-chicken-feta",
+      "title": "Creamy Kale Chicken Feta",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/CREAMY KALE CHICKEN FETA_01.webp",
+      "thumb": "images/thumbnails/CREAMY KALE CHICKEN FETA_01.webp",
+      "serves": "2",
+      "prep_time": "",
+      "cook_time": ""
+    },
+    {
+      "id": 16,
+      "slug": "spinach-egg-burrito-bites",
+      "title": "Spinach Egg Burrito Bites",
+      "category": [
+        "breakfast",
+        "express"
+      ],
+      "image": "images/recipes/SPINACH EGG BURRITO BITES_01.webp",
+      "thumb": "images/thumbnails/SPINACH EGG BURRITO BITES_01.webp",
+      "serves": "2",
+      "prep_time": "",
+      "cook_time": ""
+    },
+    {
+      "id": 17,
+      "slug": "protein-club-sandwich",
+      "title": "Protein Club Sandwich",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/PROTEIN CLUB SANDWICH_01.webp",
+      "thumb": "images/thumbnails/PROTEIN CLUB SANDWICH_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "6–8 minutes"
+    },
+    {
+      "id": 18,
+      "slug": "spiced-harissa-chicken-melt",
+      "title": "Spiced Harissa Chicken Melt",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/SPICED HARISSA CHICKEN MELT_01.webp",
+      "thumb": "images/thumbnails/SPICED HARISSA CHICKEN MELT_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "8 minutes"
+    },
+    {
+      "id": 19,
+      "slug": "grilled-halloumi-harissa-sandwich",
+      "title": "Grilled Halloumi Harissa Sandwich",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/GRILLED HALLOUMI HARISSA SANDWICH_01.webp",
+      "thumb": "images/thumbnails/GRILLED HALLOUMI HARISSA SANDWICH_01.webp",
+      "serves": "1",
+      "prep_time": "8 minutes",
+      "cook_time": "6 minutes"
+    },
+    {
+      "id": 20,
+      "slug": "chicken-sweetcorn-garden-salad",
+      "title": "Chicken Sweetcorn Garden Salad",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/CHICKEN SWEETCORN GARDEN SALAD_01.webp",
+      "thumb": "images/thumbnails/CHICKEN SWEETCORN GARDEN SALAD_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "8 minutes"
+    },
+    {
+      "id": 21,
+      "slug": "cocoa-granola-power-bowl",
+      "title": "Cocoa Granola Power Bowl",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/COCOA GRANOLA POWER BOWL_01.webp",
+      "thumb": "images/thumbnails/COCOA GRANOLA POWER BOWL_01.webp",
+      "serves": "1",
+      "prep_time": "5 minutes",
+      "cook_time": "10 minutes (granola preparation)"
+    },
+    {
+      "id": 22,
+      "slug": "herb-potato-spanish-bake",
+      "title": "Herb & Potato Spanish Bake",
+      "category": [
+        "anytime",
+        "express"
+      ],
+      "image": "images/recipes/HERB & POTATO SPANISH BAKE_01.webp",
+      "thumb": "images/thumbnails/HERB & POTATO SPANISH BAKE_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "18–20 minutes"
+    },
+    {
+      "id": 23,
+      "slug": "home-style-spiced-chicken-curry-with-aromatic-rice",
+      "title": "Home-style Spiced Chicken Curry with Aromatic Rice",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/HOME-STYLE SPICED CHICKEN CURRY WITH AROMATIC RICE_01.webp",
+      "thumb": "images/thumbnails/HOME-STYLE SPICED CHICKEN CURRY WITH AROMATIC RICE_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 24,
+      "slug": "mediterranean-golden-almond-salmon-thyme-potatoes",
+      "title": "Mediterranean Golden Almond Salmon & Thyme Potatoes",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/MEDITERRANEAN GOLDEN ALMOND SALMON & THYME POTATOES_01.webp",
+      "thumb": "images/thumbnails/MEDITERRANEAN GOLDEN ALMOND SALMON & THYME POTATOES_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "18–20 minutes"
+    },
+    {
+      "id": 25,
+      "slug": "classic-cuban-beef-picadillo",
+      "title": "Classic Cuban Beef Picadillo",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/CLASSIC CUBAN BEEF PICADILLO_01.webp",
+      "thumb": "images/thumbnails/CLASSIC CUBAN BEEF PICADILLO_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 26,
+      "slug": "brown-rice-chicken-biryani",
+      "title": "Brown Rice Chicken Biryani",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/BROWN RICE CHICKEN BIRYANI_01.webp",
+      "thumb": "images/thumbnails/BROWN RICE CHICKEN BIRYANI_01.webp",
+      "serves": "2",
+      "prep_time": "15 minutes",
+      "cook_time": "30 minutes"
+    },
+    {
+      "id": 27,
+      "slug": "light-italian-chicken-alfredo",
+      "title": "Light Italian Chicken Alfredo",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/LIGHT ITALIAN CHICKEN ALFREDO_01.webp",
+      "thumb": "images/thumbnails/LIGHT ITALIAN CHICKEN ALFREDO_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 28,
+      "slug": "detox-lime-mint-bowl",
+      "title": "Detox Lime Mint Bowl",
+      "category": [
+        "anytime",
+        "express"
+      ],
+      "image": "images/recipes/DETOX LIME MINT BOWL_01.webp",
+      "thumb": "images/thumbnails/DETOX LIME MINT BOWL_01.webp",
+      "serves": "1–2",
+      "prep_time": "8 minutes",
+      "cook_time": "0 minutes"
+    },
+    {
+      "id": 29,
+      "slug": "baked-chicken-tikka-skewers",
+      "title": "Baked Chicken Tikka Skewers",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/BAKED CHICKEN TIKKA SKEWERS_01.webp",
+      "thumb": "images/thumbnails/BAKED CHICKEN TIKKA SKEWERS_01.webp",
+      "serves": "2",
+      "prep_time": "15 minutes (plus marination)",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 30,
+      "slug": "golden-turmeric-chicken-mole",
+      "title": "Golden Turmeric Chicken Mole",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/GOLDEN TURMERIC CHICKEN MOLE_01.webp",
+      "thumb": "images/thumbnails/GOLDEN TURMERIC CHICKEN MOLE_01.webp",
+      "serves": "2",
+      "prep_time": "15 minutes",
+      "cook_time": "25 minutes"
+    },
+    {
+      "id": 31,
+      "slug": "chicken-tikka-wrap-with-yogurt-mustard-sauce",
+      "title": "Chicken Tikka Wrap with Yogurt Mustard Sauce",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/CHICKEN TIKKA WRAP WITH YOGURT MUSTARD SAUCE_01.webp",
+      "thumb": "images/thumbnails/CHICKEN TIKKA WRAP WITH YOGURT MUSTARD SAUCE_01.webp",
+      "serves": "1–2",
+      "prep_time": "10 minutes",
+      "cook_time": "5 minutes"
+    },
+    {
+      "id": 32,
+      "slug": "homemade-pesto-chicken-penne",
+      "title": "Homemade Pesto Chicken Penne",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/HOMEMADE PESTO CHICKEN PENNE_01.webp",
+      "thumb": "images/thumbnails/HOMEMADE PESTO CHICKEN PENNE_01.webp",
+      "serves": "2",
+      "prep_time": "15 minutes",
+      "cook_time": "15 minutes"
+    },
+    {
+      "id": 33,
+      "slug": "mediterranean-chicken-quinoa-power-bowl",
+      "title": "Mediterranean Chicken Quinoa Power Bowl",
+      "category": [
+        "anytime",
+        "express"
+      ],
+      "image": "images/recipes/MEDITERRANEAN CHICKEN QUINOA POWER BOWL_01.webp",
+      "thumb": "images/thumbnails/MEDITERRANEAN CHICKEN QUINOA POWER BOWL_01.webp",
+      "serves": "2",
+      "prep_time": "15 minutes",
+      "cook_time": "15 minutes"
+    },
+    {
+      "id": 34,
+      "slug": "hulks-green-smoothie-bowl",
+      "title": "Hulk's Green Smoothie Bowl",
+      "category": [
+        "anytime",
+        "express"
+      ],
+      "image": "images/recipes/HULK'S GREEN SMOOTHIE BOWL_01.webp",
+      "thumb": "images/thumbnails/HULK'S GREEN SMOOTHIE BOWL_01.webp",
+      "serves": "1–2",
+      "prep_time": "5 minutes",
+      "cook_time": "0 minutes"
+    },
+    {
+      "id": 35,
+      "slug": "high-protein-egg-white-power-wrap",
+      "title": "High-protein Egg White Power Wrap",
+      "category": [
+        "anytime",
+        "express"
+      ],
+      "image": "images/recipes/HIGH-PROTEIN EGG WHITE POWER WRAP_01.webp",
+      "thumb": "images/thumbnails/HIGH-PROTEIN EGG WHITE POWER WRAP_01.webp",
+      "serves": "1",
+      "prep_time": "10 minutes",
+      "cook_time": "0 minutes"
+    },
+    {
+      "id": 36,
+      "slug": "mediterranean-steak-potato-skewers-with-tzatziki",
+      "title": "Mediterranean Steak & Potato Skewers with Tzatziki",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/MEDITERRANEAN STEAK & POTATO SKEWERS WITH TZATZIKI_01.webp",
+      "thumb": "images/thumbnails/MEDITERRANEAN STEAK & POTATO SKEWERS WITH TZATZIKI_01.webp",
+      "serves": "2",
+      "prep_time": "15 minutes",
+      "cook_time": "15 minutes"
+    },
+    {
+      "id": 37,
+      "slug": "grilled-cajun-shrimp-with-basil-pesto-spaghetti",
+      "title": "Grilled Cajun Shrimp with Basil Pesto Spaghetti",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/GRILLED CAJUN SHRIMP WITH BASIL PESTO SPAGHETTI_01.webp",
+      "thumb": "images/thumbnails/GRILLED CAJUN SHRIMP WITH BASIL PESTO SPAGHETTI_01.webp",
+      "serves": "2",
+      "prep_time": "15 minutes",
+      "cook_time": "15 minutes"
+    },
+    {
+      "id": 38,
+      "slug": "rosemary-grilled-steak-with-golden-baked-potatoes",
+      "title": "Rosemary Grilled Steak with Golden Baked Potatoes",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/ROSEMARY GRILLED STEAK WITH GOLDEN BAKED POTATOES_01.webp",
+      "thumb": "images/thumbnails/ROSEMARY GRILLED STEAK WITH GOLDEN BAKED POTATOES_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 39,
+      "slug": "creamy-spinach-chicken-rice-bowl",
+      "title": "Creamy Spinach Chicken Rice Bowl",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/CREAMY SPINACH CHICKEN RICE BOWL_01.webp",
+      "thumb": "images/thumbnails/CREAMY SPINACH CHICKEN RICE BOWL_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "20 minutes"
+    },
+    {
+      "id": 40,
+      "slug": "woodland-mushroom-chicken-risotto",
+      "title": "Woodland Mushroom & Chicken Risotto",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/WOODLAND MUSHROOM & CHICKEN RISOTTO_01.webp",
+      "thumb": "images/thumbnails/WOODLAND MUSHROOM & CHICKEN RISOTTO_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "25 minutes"
+    },
+    {
+      "id": 41,
+      "slug": "fire-grilled-steak-pepper-panini",
+      "title": "Fire-grilled Steak & Pepper Panini",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/FIRE-GRILLED STEAK & PEPPER PANINI_01.webp",
+      "thumb": "images/thumbnails/FIRE-GRILLED STEAK & PEPPER PANINI_01.webp",
+      "serves": "1–2",
+      "prep_time": "10 minutes",
+      "cook_time": "10 minutes"
+    },
+    {
+      "id": 42,
+      "slug": "parmesan-crusted-chicken-with-creamy-mash",
+      "title": "Parmesan Crusted Chicken with Creamy Mash",
+      "category": [
+        "anytime",
+        "worth-the-wait"
+      ],
+      "image": "images/recipes/PARMESAN CRUSTED CHICKEN WITH CREAMY MASH_01.webp",
+      "thumb": "images/thumbnails/PARMESAN CRUSTED CHICKEN WITH CREAMY MASH_01.webp",
+      "serves": "2",
+      "prep_time": "10 minutes",
+      "cook_time": "20 minutes"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "label": "All Recipes"
+    },
+    {
+      "id": "breakfast",
+      "label": "Breakfast"
+    },
+    {
+      "id": "anytime",
+      "label": "Anytime Meals"
+    },
+    {
+      "id": "worth-the-wait",
+      "label": "Worth the Wait"
+    },
+    {
+      "id": "express",
+      "label": "Express Creations"
+    }
+  ]
+}

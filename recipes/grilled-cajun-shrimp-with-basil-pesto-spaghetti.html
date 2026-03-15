@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grilled Cajun Shrimp with Basil Pesto Spaghetti — Chef Rajesh Abraham</title>
+  <meta name="description" content="A vibrant fusion dish where smoky Cajun-seasoned shrimp meet creamy basil pesto spaghetti. The grilled shrimp bring bold spice and charred flavor whil">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .recipe-hero{min-height:clamp(50vh,60vh,70vh);position:relative;overflow:hidden;background:var(--charcoal);display:flex;align-items:flex-end}
+    .recipe-hero-media{position:absolute;inset:0}
+    .recipe-hero-media img{width:100%;height:100%;object-fit:cover;opacity:.65}
+    .recipe-hero-media .img-placeholder{width:100%;height:100%;min-height:100%}
+    .recipe-hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.95) 0%,rgba(28,28,26,.3) 55%,transparent 100%)}
+    .recipe-hero-content{position:relative;z-index:2;padding:clamp(2rem,4vw,4rem) 0 clamp(2rem,4vw,3.5rem);width:100%}
+    .recipe-hero-content .eyebrow{color:var(--gold-light)}
+    .recipe-hero-content h1{color:var(--cream);font-size:clamp(1.8rem,4vw,3.2rem);max-width:800px;margin-bottom:.75rem}
+    .recipe-hero-content .by{color:rgba(245,240,232,.45);font-style:italic;font-size:.88rem}
+    .recipe-meta-bar{display:flex;gap:clamp(1rem,3vw,2.5rem);flex-wrap:wrap;margin-top:1.25rem}
+    .meta-item{display:flex;align-items:center;gap:.4rem}
+    .meta-item svg{stroke:rgba(245,240,232,.5);flex-shrink:0}
+    .meta-item span{color:rgba(245,240,232,.55);font-size:.82rem}
+    .meta-item strong{color:var(--cream);font-size:.82rem;font-weight:500}
+    .back-bar{background:var(--cream);border-bottom:1px solid var(--line);padding:.7rem 0}
+    .back-bar a{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);transition:color var(--transition)}
+    .back-bar a:hover{color:var(--gold)}
+    .recipe-content{padding:clamp(2.5rem,5vw,5rem) 0 clamp(3.5rem,7vw,6rem)}
+    .recipe-layout{display:grid;grid-template-columns:300px 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+    .recipe-sidebar{position:sticky;top:calc(65px + 1rem)}
+    .sidebar-card{background:var(--cream);border-top:2px solid var(--gold);padding:clamp(1.25rem,2vw,1.75rem);margin-bottom:1rem}
+    .sidebar-card h4{font-family:var(--ff-body);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);margin-bottom:1rem;font-weight:500}
+    .ing-list{list-style:none}
+    .ing-list li{padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.88rem;line-height:1.5}
+    .ing-list li:last-child{border:none}
+    .ing-subhead{font-family:var(--ff-display);font-weight:500;color:var(--gold)!important;font-size:.9rem!important;padding-top:.9rem!important;border-bottom:none!important}
+    .nutrition-table{width:100%;border-collapse:collapse;font-size:.82rem}
+    .nutrition-table tr{border-bottom:1px solid var(--line)}
+    .nutrition-table tr:last-child{border:none}
+    .nutrition-table td{padding:.45rem 0}
+    .nutrition-table td:first-child{color:var(--smoke)}
+    .nutrition-table td:last-child{text-align:right;font-weight:500}
+    .chef-note{font-family:var(--ff-display);font-style:italic;font-size:.95rem;color:var(--smoke);line-height:1.7}
+    .chef-note-sig{font-size:.72rem;color:var(--gold);font-style:normal;display:block;margin-top:.5rem}
+    .steps-area{}
+    .recipe-desc{color:var(--smoke);line-height:1.85;margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+    .hero-step-img{width:100%;aspect-ratio:16/9;overflow:hidden;margin-bottom:clamp(1.5rem,3vw,2.5rem);position:relative}
+    .hero-step-img img{width:100%;height:100%;object-fit:cover}
+    .hero-step-img .img-placeholder{position:absolute;inset:0;width:100%;height:100%}
+    .method-list{list-style:none}
+    .method-step{display:flex;gap:clamp(1rem,2vw,1.5rem);margin-bottom:clamp(1.25rem,2.5vw,2rem);align-items:flex-start}
+    .step-num{flex-shrink:0;width:44px;height:44px;background:var(--charcoal);color:var(--gold);font-family:var(--ff-display);font-size:1.3rem;display:flex;align-items:center;justify-content:center}
+    .step-body{flex:1;min-width:0}
+    .step-body h4{font-family:var(--ff-display);font-size:clamp(1.05rem,1.5vw,1.2rem);margin-bottom:.35rem;font-weight:400}
+    .step-body p{color:var(--smoke);line-height:1.8;font-size:.92rem}
+    .tips-box{background:var(--cream);border-left:3px solid var(--gold);padding:clamp(1.25rem,2.5vw,1.75rem) clamp(1.25rem,2.5vw,2rem);margin-top:clamp(1.5rem,3vw,2.5rem)}
+    .tips-box h4{font-family:var(--ff-display);font-size:1.2rem;margin-bottom:.85rem;font-weight:400}
+    .tips-box p{color:var(--smoke);font-size:.9rem;line-height:1.8}
+    .extra-box{background:var(--warm-white);border-left:3px solid var(--line);padding:1.25rem 1.75rem;margin-top:1.5rem}
+    .extra-box p{color:var(--smoke);font-size:.9rem;line-height:1.8}
+    .plating-img{width:100%;aspect-ratio:4/3;overflow:hidden;margin-top:2rem;position:relative}
+    .plating-img img{width:100%;height:100%;object-fit:cover}
+    .plating-img .img-placeholder{position:absolute;inset:0;width:100%;height:100%}
+    .related{background:var(--cream);padding:clamp(3rem,6vw,5rem) 0}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,2vw,1.5rem);margin-top:2rem}
+    .related-card{background:var(--warm-white);overflow:hidden;display:block}
+    .related-img{position:relative;width:100%;padding-top:62%;overflow:hidden}
+    .related-img>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .related-img img{transition:transform .5s var(--ease-out)}
+    .related-card:hover .related-img img{transform:scale(1.05)}
+    .related-img .img-placeholder{min-height:100%}
+    .related-body{padding:.9rem 1.1rem 1.25rem}
+    .related-body h4{font-family:var(--ff-display);font-size:.97rem;font-weight:400;line-height:1.35}
+    .related-card:hover h4{color:var(--gold)}
+    @media(max-width:900px){.recipe-layout{grid-template-columns:1fr}.recipe-sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:1rem}}
+    @media(max-width:680px){.recipe-sidebar{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:440px){.related-grid{grid-template-columns:1fr}}
+
+    /* Hide placeholder automatically when real image loads */
+    .hero-step-img img:not([style*="display:none"]) ~ .img-placeholder,
+    .plating-img img:not([style*="display:none"]) ~ .img-placeholder,
+    .recipe-hero-media img:not([style*="display:none"]) ~ .img-placeholder,
+    .related-img img:not([style*="display:none"]) ~ .img-placeholder { display:none; }
+  </style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner container">
+  <a href="../index.html" class="nav-logo">Chef <span>Rajesh</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../recipes.html" class="active">Recipes</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html">Home</a><a href="../recipes.html">Recipes</a>
+  <a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</div>
+
+<header class="recipe-hero">
+  <div class="recipe-hero-media" aria-hidden="true">
+    <img src="../images/recipes/GRILLED%20CAJUN%20SHRIMP%20WITH%20BASIL%20PESTO%20SPAGHETTI_01.webp" alt="Grilled Cajun Shrimp with Basil Pesto Spaghetti" loading="eager" onerror="this.style.display='none'">
+    <div class="img-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+      <span>GRILLED CAJUN SHRIMP WITH BASIL PESTO SPAGHETTI_01.webp</span>
+      <span class="ph-note">1400×900px hero image</span>
+    </div>
+  </div>
+  <div class="recipe-hero-grad"></div>
+  <div class="recipe-hero-content container">
+    <span class="eyebrow">Anytime Meals · Worth the Wait</span>
+    <h1>Grilled Cajun Shrimp with Basil Pesto Spaghetti</h1>
+    <p class="by">By Chef Rajesh Abraham</p>
+    <div class="recipe-meta-bar">
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+        <strong>Prep:</strong><span>15 minutes</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2c-1 3-4 5-4 8a4 4 0 0 0 8 0c0-3-3-5-4-8z"/></svg>
+        <strong>Cook:</strong><span>15 minutes</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        <strong>Serves:</strong><span>2</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+        <strong>Total:</strong><span>30 minutes</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="back-bar"><div class="container">
+  <a href="../recipes.html">← Back to All Recipes</a>
+</div></div>
+
+<article class="recipe-content">
+  <div class="container">
+    <div class="recipe-layout">
+
+      <aside class="recipe-sidebar">
+        <div class="sidebar-card">
+          <h4>Ingredients</h4>
+          <ul class="ing-list"><li>200 g spaghetti</li><li>200 g shrimp, peeled and deveined</li><li>1 tbsp olive oil</li><li>1 tsp Cajun seasoning</li><li>Salt and black pepper to taste</li><li>3 tbsp basil pesto</li><li>1/3 cup cooking cream (optional for creamy texture)</li><li>2 tbsp grated parmesan cheese</li><li>Fresh basil leaves for garnish</li></ul>
+        </div>
+        <div class="sidebar-card">
+          <h4>Categories</h4>
+          <div class="recipe-card-cats" style="margin-top:.25rem"><span class="recipe-tag anytime">Anytime Meals</span><span class="recipe-tag worth-the-wait">Worth the Wait</span></div>
+        </div>
+        
+        <div class="sidebar-card"><h4>Nutrition Per Serving</h4><table class="nutrition-table"><tbody><tr><td>Calories</td><td>470 kcal</td></tr><tr><td>Protein</td><td>32 g</td></tr><tr><td>Carbohydrates</td><td>40 g</td></tr><tr><td>Fat</td><td>20 g</td></tr><tr><td>Fiber</td><td>3 g</td></tr></tbody></table></div>
+      </aside>
+
+      <div class="steps-area">
+        <span class="eyebrow">The Method</span>
+        <h2>How to Make It</h2>
+        <p class="recipe-desc">A vibrant fusion dish where smoky Cajun-seasoned shrimp meet creamy basil pesto spaghetti. The grilled shrimp bring bold spice and charred flavor while the fresh pesto adds a bright, herbaceous balance. Finished with parmesan and basil, this pasta is both comforting and elegant.</p>
+
+        <div class="hero-step-img">
+          <img src="../images/recipes/GRILLED%20CAJUN%20SHRIMP%20WITH%20BASIL%20PESTO%20SPAGHETTI_01.webp" alt="Grilled Cajun Shrimp with Basil Pesto Spaghetti — preparation"
+               onerror="this.style.display='none'" loading="lazy">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+            <span>GRILLED CAJUN SHRIMP WITH BASIL PESTO SPAGHETTI_01.webp</span>
+            <span class="ph-note">Hero / preparation photo</span>
+          </div>
+        </div>
+
+        <ol class="method-list"><li class="method-step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            
+            <p>Cook spaghetti in salted boiling water until al dente. Drain and reserve a little pasta water. Toss shrimp with olive oil, Cajun seasoning, salt, and pepper. Grill or pan-sear shrimp for about 2–3 minutes per side until cooked.</p>
+          </div>
+        </li><li class="method-step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h4>In a pan gently heat pesto and cream over low heat.</h4>
+            <p>Add cooked spaghetti and toss until well coated. Adjust with pasta water if needed. Plate the pesto spaghetti and arrange grilled Cajun shrimp on top. Garnish with parmesan cheese and fresh basil before serving.</p>
+          </div>
+        </li></ol>
+        
+        
+
+        <div class="plating-img">
+          <img src="../images/recipes/GRILLED%20CAJUN%20SHRIMP%20WITH%20BASIL%20PESTO%20SPAGHETTI_02.webp" alt="Grilled Cajun Shrimp with Basil Pesto Spaghetti — final dish"
+               onerror="this.style.display='none'" loading="lazy">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg>
+            <span>GRILLED CAJUN SHRIMP WITH BASIL PESTO SPAGHETTI_02.webp</span>
+            <span class="ph-note">Final plated dish photo</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</article>
+
+<section class="related">
+  <div class="container">
+    <span class="eyebrow">More from Chef Rajesh</span>
+    <h2>You Might Also Like</h2>
+    <div class="related-grid">
+        <a href="rosemary-grilled-steak-with-golden-baked-potatoes.html" class="related-card reveal">
+          <div class="related-img">
+            <img src="../images/thumbnails/ROSEMARY%20GRILLED%20STEAK%20WITH%20GOLDEN%20BAKED%20POTATOES_01.webp" alt="Rosemary Grilled Steak with Golden Baked Potatoes" loading="lazy" onerror="this.style.display='none'">
+            <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg><span>Recipe Photo</span></div>
+          </div>
+          <div class="related-body">
+            <div class="recipe-card-cats" style="margin-bottom:.45rem"><span class="recipe-tag anytime">Anytime Meals</span><span class="recipe-tag worth-the-wait">Worth the Wait</span></div>
+            <h4>Rosemary Grilled Steak with Golden Baked Potatoes</h4>
+          </div>
+        </a>
+        <a href="creamy-spinach-chicken-rice-bowl.html" class="related-card reveal">
+          <div class="related-img">
+            <img src="../images/thumbnails/CREAMY%20SPINACH%20CHICKEN%20RICE%20BOWL_01.webp" alt="Creamy Spinach Chicken Rice Bowl" loading="lazy" onerror="this.style.display='none'">
+            <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg><span>Recipe Photo</span></div>
+          </div>
+          <div class="related-body">
+            <div class="recipe-card-cats" style="margin-bottom:.45rem"><span class="recipe-tag anytime">Anytime Meals</span><span class="recipe-tag worth-the-wait">Worth the Wait</span></div>
+            <h4>Creamy Spinach Chicken Rice Bowl</h4>
+          </div>
+        </a>
+        <a href="woodland-mushroom-chicken-risotto.html" class="related-card reveal">
+          <div class="related-img">
+            <img src="../images/thumbnails/WOODLAND%20MUSHROOM%20&%20CHICKEN%20RISOTTO_01.webp" alt="Woodland Mushroom & Chicken Risotto" loading="lazy" onerror="this.style.display='none'">
+            <div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="12" r="10"/></svg><span>Recipe Photo</span></div>
+          </div>
+          <div class="related-body">
+            <div class="recipe-card-cats" style="margin-bottom:.45rem"><span class="recipe-tag anytime">Anytime Meals</span><span class="recipe-tag worth-the-wait">Worth the Wait</span></div>
+            <h4>Woodland Mushroom & Chicken Risotto</h4>
+          </div>
+        </a></div>
+    <div style="text-align:center;margin-top:clamp(1.5rem,3vw,2.5rem)">
+      <a href="../recipes.html" class="btn btn-outline btn-arrow">All Recipes</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">Chef <span>Rajesh</span></div>
+      <p>Executive Chef with over two decades of experience across the UAE, Bahrain, Saudi Arabia, and India.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="mailto:chef@rajeshcooks.com" class="footer-social-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><a href="../index.html">Home</a><a href="../recipes.html">Recipes</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+    <div class="footer-col"><h5>Categories</h5><a href="../recipes.html">Breakfast</a><a href="../recipes.html">Anytime Meals</a><a href="../recipes.html">Worth the Wait</a><a href="../recipes.html">Express Creations</a></div>
+    <div class="footer-col"><h5>Services</h5><a href="../about.html">Executive Chef</a><a href="../about.html">Consulting</a><a href="../about.html">Meal Planning</a><a href="../about.html">Cooking Classes</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Chef Rajesh Abraham. All rights reserved.</span>
+    <span>Crafted with passion &amp; precision.</span>
+  </div>
+</div></footer>
+<script src="../js/recipes.js"></script>
+
+<script>
+  // Hide placeholder divs as soon as their sibling image loads
+  document.querySelectorAll('.hero-step-img img, .plating-img img, .recipe-hero-media img, .related-img img').forEach(function(img) {
+    function hidePlaceholder() {
+      if (img.naturalWidth > 0) {
+        var ph = img.parentElement.querySelector('.img-placeholder');
+        if (ph) ph.style.display = 'none';
+      }
+    }
+    if (img.complete) { hidePlaceholder(); }
+    else { img.addEventListener('load', hidePlaceholder); }
+  });
+</script>
+
+</body>
+</html>

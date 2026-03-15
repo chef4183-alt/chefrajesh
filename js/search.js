@@ -33,9 +33,9 @@ function filterRecipes(query = '', category = 'all') {
 
 /* ─── Render a single card ─── */
 function renderCard(recipe, basePath = '') {
-  const href = `${basePath}recipes/${recipe.slug}.html`;
+  const href   = `${basePath}recipes/${recipe.slug}.html`;
   const imgSrc = `${basePath}${recipe.thumb}`;
-  const cats = (recipe.category || []);
+  const cats   = (recipe.category || []);
 
   return `
 <article class="recipe-card reveal" role="listitem">
@@ -45,6 +45,7 @@ function renderCard(recipe, basePath = '') {
         src="${imgSrc}"
         alt="${recipe.title}"
         loading="lazy"
+        onload="this.nextElementSibling.style.display='none'"
         onerror="this.style.display='none'"
       >
       <div class="img-placeholder" aria-hidden="true">
