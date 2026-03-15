@@ -1,16 +1,18 @@
 /* ============================================
    recipes.js — Nav, Reveal, Hamburger
+   Strategy: content is ALWAYS visible.
+   Scroll animation is progressive enhancement only.
    ============================================ */
 
-function initReveal() {
-  const els = document.querySelectorAll('.reveal:not(.visible)');
-  if (!els.length) return;
+/* ============================================
+   recipes.js — Nav, Reveal, Hamburger
+   Reveal: content is ALWAYS visible.
+   Animation is pure CSS, no JS hiding.
+   ============================================ */
 
-  // If IntersectionObserver not supported, just show everything
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(el => el.classList.add('visible'));
-    return;
-  }
+/* ─── SCROLL REVEAL ─── */
+function initReveal() {
+  if (!('IntersectionObserver' in window)) return;
 
   const obs = new IntersectionObserver(
     (entries) => entries.forEach(e => {
@@ -21,9 +23,14 @@ function initReveal() {
     }),
     { threshold: 0.05, rootMargin: '0px 0px -30px 0px' }
   );
-  els.forEach(el => obs.observe(el));
+
+  // Only animate elements that are NOT yet visible
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    obs.observe(el);
+  });
 }
 
+/* ─── STICKY NAV ─── */
 function initNav() {
   const nav = document.querySelector('.nav');
   if (!nav) return;
@@ -32,6 +39,7 @@ function initNav() {
   onScroll();
 }
 
+/* ─── ACTIVE NAV LINK ─── */
 function initActiveNav() {
   const page = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
@@ -40,6 +48,7 @@ function initActiveNav() {
   });
 }
 
+/* ─── HAMBURGER MENU ─── */
 function initHamburger() {
   const btn  = document.querySelector('.hamburger');
   const menu = document.querySelector('.mobile-menu');
@@ -64,11 +73,12 @@ function initHamburger() {
   window.addEventListener('resize', () => { if (window.innerWidth > 768) close(); }, { passive: true });
 }
 
+/* ─── NAV LOGO COLOUR on dark hero ─── */
 function initNavLogoColor() {
-  const nav  = document.querySelector('.nav');
-  const logo = nav && nav.querySelector('.nav-logo');
+  const nav   = document.querySelector('.nav');
+  const logo  = nav && nav.querySelector('.nav-logo');
   const lines = nav && nav.querySelectorAll('.hamburger span');
-  const hero = document.querySelector('.hero, .page-header');
+  const hero  = document.querySelector('.hero, .page-header');
   if (!nav || !logo || !hero) return;
 
   const update = () => {
@@ -80,28 +90,31 @@ function initNavLogoColor() {
   update();
 }
 
-/* ── INIT ── */
+/* ─── INIT ALL ─── */
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initActiveNav();
   initHamburger();
   initNavLogoColor();
+  setTimeout(initReveal, 150);
 
-  // Reveal elements already in viewport immediately
-  initReveal();
-
-  // Also trigger on scroll in case observer missed any
-  window.addEventListener('scroll', initReveal, { passive: true, once: false });
-
-  // Watch for dynamically added cards (search results)
+  // Watch for dynamically added recipe cards
   const grid = document.getElementById('recipes-grid');
   if (grid) {
-    new MutationObserver(() => setTimeout(initReveal, 60))
-      .observe(grid, { childList: true });
+    new MutationObserver(() => {
+      grid.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        el.classList.add('visible');
+      });
+      setTimeout(initReveal, 60);
+    }).observe(grid, { childList: true });
   }
 });
 
-// Extra safety net — run again after full page load
+// Final safety net — ensure nothing is ever stuck invisible
 window.addEventListener('load', () => {
-  setTimeout(initReveal, 200);
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 600);
 });
